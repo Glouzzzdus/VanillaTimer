@@ -10,7 +10,7 @@
   <body>
     <div id="app">      
       <h1>Vanilla timer</h1>
-      
+
       <form>
         <label>
           Number of minutes
@@ -19,7 +19,7 @@
 
         <div class="btn-wrp">
           <button id="start" disabled>Start</button>
-          <button id="reset" disabled>Reset</button>
+          <button id="reset" disabled onclick="resetTimer(); return false" >Reset</button>
         </div>
       </form>
 

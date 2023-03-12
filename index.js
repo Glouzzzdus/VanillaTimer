@@ -5,12 +5,11 @@ let result = document.getElementById("result");
 
 let minutes = 0;
 let seconds = 0;
-let time =0;
+let time = 0;
 let timeInterval;
 
 function startTimer() {
-    console.log(444)
-  if (time === 0 || time === undefined) {
+  if (time === 0) {
     console.log("begin");
     beginTimer();
   } else {
@@ -22,8 +21,6 @@ function startTimer() {
 function beginTimer() {
   let timeCount = input.value;
   time = timeCount * 60;
-  console.log(timeCount);
-  console.log(time);
   input.disabled = true;
   btnStart.disabled = true;
   btnReset.innerText = "Stop";
@@ -35,13 +32,12 @@ function beginTimer() {
 
 function resumeTimer() {
   let timeCount = time;
-  console.log(timeCount);
   input.disabled = true;
   btnStart.disabled = true;
   btnReset.innerText = "Stop";
   btnReset.disabled = false;
-  minutes = timeCount / 60;
   seconds = timeCount % 60;
+  minutes = (timeCount - seconds) / 60;
   timeInterval = setInterval(timingFunction, 1000);
   setResultText(minutes, seconds);
 }
@@ -71,25 +67,25 @@ function stopTimer() {
 }
 
 function rresetTimer() {
-    console.log("reset");
-    input.value = "";
-    clearInterval(timeInterval);
-    minutes = 0;
-    seconds = 0;
-    time = 0;
-    setResultText(minutes, seconds);
-    input.disabled = false;
-    btnReset.disabled = true;
-    setResultText(minutes, seconds);
+  console.log("reset");
+  input.value = "";
+  clearInterval(timeInterval);
+  minutes = 0;
+  seconds = 0;
+  time = 0;
+  setResultText(minutes, seconds);
+  input.disabled = false;
+  btnStart.disabled = true;
+  btnReset.disabled = true;
+  setResultText(minutes, seconds);
 }
 
 function resetTimer() {
   console.log(time);
   if (btnReset.innerText === "Stop") {
     stopTimer();
-  }
-  else if (btnReset.innerText === "Reset") {
-      rresetTimer();
+  } else if (btnReset.innerText === "Reset") {
+    rresetTimer();
   }
 }
 
@@ -104,5 +100,5 @@ function timeInput() {
 }
 
 btnStart.addEventListener("click", startTimer);
-btnReset.addEventListener("click", resetTimer);
+//btnReset.addEventListener("click", resetTimer);
 input.addEventListener("input", timeInput);
