@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="index.css" />
+    <!-- <script src="index.js"></script> -->
+  </head>
+
+  <body>
+    <div id="app">      
+      <h1>Vanilla timer</h1>
+      
+      <form>
+        <label>
+          Number of minutes
+          <input id="minutes" type="number" max="60" min="0" />
+        </label>
+
+        <div class="btn-wrp">
+          <button id="start" disabled>Start</button>
+          <button id="reset" disabled>Reset</button>
+        </div>
+      </form>
+
+      <p id="result">00:00</p>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

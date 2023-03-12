@@ -1,0 +1,76 @@
+body {
+  background: #35dc9b;
+  background: linear-gradient(to bottom, #35dc9b, #3857af);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 0;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+h1 {
+  margin: 0 auto 40px;
+  color: #fff;
+  font: 20px Helvetica;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+label {
+  color: #fff;
+}
+input {
+  font: 18px Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+  display: block;
+  border: 1px solid transparent;
+  padding: 20px;
+  width: 300px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input::placeholder {
+  transition: all 0.2s ease-in-out;
+  color: #999;
+  font: 18px Helvetica, Arial, sans-serif;
+}
+input:focus,
+input.populated {
+  border-color: #3857af;
+}
+input.populated::placeholder {
+  color: transparent;
+}
+.btn-wrp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+button {
+  transition: all 0.2s ease-in-out;
+  font: 18px Helvetica, Arial, sans-serif;
+  border: none;
+  background: #1aaf75;
+  color: #fff;
+  padding: 16px 40px;
+}
+button:hover {
+  background: #109f67;
+}
+button:disabled {
+  background: #9fa9a5;
+}
+p {
+  font-size: 46px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+}
